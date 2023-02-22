@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Constant</string>
+    <string name="hello">Hello</string>
+    <string name="ok" translatable="false">ok</string>
 </resources>
