@@ -2,6 +2,7 @@ package com.example.constant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.example.constant.constans.Constans
 import com.example.constant.databinding.ActivityMainBinding
@@ -16,8 +17,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(bindingClass.root)
 
         bindingClass.button1.setOnClickListener {
-
+            Log.d("my log", "ID = ${R.drawable.accesss}")
+            bindingClass.imPhoto.visibility = View.VISIBLE
             val name=bindingClass.editName.text.toString()
+
             when(name){
 
             Constans.DIRECTOR -> {
@@ -25,21 +28,27 @@ class MainActivity : AppCompatActivity() {
                 bindingClass.textView1.visibility = View.VISIBLE
                 val tempText = "получите ${Constans.DIRECTOR_SALARY}"
 
-                bindingClass.textView1.text = if (bindingClass.password.text.toString() == Constans.DIRECTOR_PASSWORD){
+                 if (bindingClass.password.text.toString() == Constans.DIRECTOR_PASSWORD){
 
-                    tempText}
+                     bindingClass.textView1.text = tempText
+                    bindingClass.imPhoto.setImageResource(R.drawable.andrey)
+                }
                 else {
-                     "неверный пароль"
+                     bindingClass.textView1.text = "неверный пароль"
+                     bindingClass.imPhoto.setImageResource(R.drawable.accesss)
                 }
             }
                 Constans.INGENER -> {
-                    bindingClass.textView1.visibility = View.VISIBLE
-                    val tempText = "получите ${Constans.INGENER_SALARY}"
-                    bindingClass.textView1.text = if (bindingClass.password.text.toString() == Constans.INGINER_PASSWORD){
 
-                        tempText}
+                    val tempText = "получите ${Constans.INGENER_SALARY}"
+                                         if (bindingClass.password.text.toString() == Constans.INGINER_PASSWORD){
+
+                         bindingClass.textView1.text =tempText
+                         bindingClass.imPhoto.setImageResource(R.drawable.sergey)
+                     }
                     else {
-                        "неверный пароль"
+                         bindingClass.textView1.text = "неверный пароль"
+                         bindingClass.imPhoto.setImageResource(R.drawable.accesss)
                     }
                 }
 
@@ -49,11 +58,13 @@ class MainActivity : AppCompatActivity() {
 
                     val tempText = "получите ${Constans.DVORNIK_SALARY}"
 
-                    bindingClass.textView1.text = if (bindingClass.password.text.toString() == Constans.DVORNIK_PASSWORD){
+                     if (bindingClass.password.text.toString() == Constans.DVORNIK_PASSWORD){
 
-                        tempText}
+                         bindingClass.textView1.text = tempText
+                         bindingClass.imPhoto.setImageResource(R.drawable.vadim)}
                     else {
-                        "неверный пароль"
+                         bindingClass.textView1.text = "неверный пароль"
+                         bindingClass.imPhoto.setImageResource(R.drawable.accesss)
                     }
 
                 }
